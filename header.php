@@ -17,7 +17,9 @@
 	<?php echo Theme_Utils::instance()->greeting(); ?>
 	<p>
 	<?php
-	echo esc_html_e( 'Hey ' );
+	$user = wp_get_current_user();
+
+	echo esc_html_e( 'Hey '. $user->display_name );
 	do_action( 'user-greeting' );
 	?>
 	</p>
